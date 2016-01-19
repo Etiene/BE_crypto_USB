@@ -14,7 +14,6 @@ while  true
 			echo "Mounting ... "
 			mkdir -p $MOUNT_PATH
 			mount $FILE $MOUNT_PATH > /dev/null 2>&1
-			sleep 2
 			umount $MOUNT_PATH
 			rm -r $MOUNT_PATH	
 			COUNT=1
@@ -24,9 +23,9 @@ while  true
 			for LOOP in 1 2 3
 			do 
 				echo 1 > /sys/class/gpio/gpio21/value
-				usleep 300000
+				usleep 200000
 				echo 0 > /sys/class/gpio/gpio21/value
-				usleep 300000
+				usleep 200000
 			done
 
 			echo 21 > /sys/class/gpio/unexport
@@ -34,7 +33,13 @@ while  true
 		fi
 			
 	else
-		echo "USB drive not found."
+		echo 21 > /sys/class/gpio/export
+		echo "out" > /sys/class/gpio/gpio21/direction
+		echo 1 > /sys/class/gpio/gpio21/value
+		usleep 500000
+		echo 0 > /sys/class/gpio/gpio21/value
+		usleep 500000
+		echo 21 > /sys/class/gpio/unexport
 		COUNT=0
 	fi
 	sleep 1
