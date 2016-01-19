@@ -5,9 +5,9 @@ while [ true ]
 	do
 	if [ -b $FILE ];
 	then
-		echo "File $FILE exists."
+		echo "USB drive is connected at $FILE"
 	else
-		echo "File $FILE does not exist."
+		echo "USB drive not found."
 	fi
 	sleep 1
 	done
