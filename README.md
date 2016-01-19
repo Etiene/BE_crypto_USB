@@ -3,7 +3,7 @@
 BE pour la discipline d'éxecution et concurrence à ENSTA Bretagne.
 
 ##Description
-Script to verify USB drive connecting to Armadeus board and warning user after unmounting if they can remove the thumb drive
+Script to verify USB drive connecting to Armadeus board, mounting and warning the user after unmounting if they can remove the thumb drive through blinking leds
 
 ##Install instructions
 
