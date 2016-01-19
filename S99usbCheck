@@ -1,0 +1,8 @@
+#! /bin/sh
+
+echo "Initialising USB daemon"
+
+sh /root/checkUsb.sh &
+
+exit 0
+
