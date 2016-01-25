@@ -14,8 +14,10 @@ while  true
 			echo "Mounting ... "
 			mkdir -p $MOUNT_PATH
 			mount $FILE $MOUNT_PATH > /dev/null 2>&1
-			echo "Encrypting" 
-			./root/encrypter $MOUNT_PATH
+			echo "Encrypting..." 
+			./root/encrypterDecrypter $MOUNT_PATH/toCrypt
+			echo "Decrypting..."
+			./root/encrypterDecrypter $MOUNT_PATH/toDecrypt.xor
 			umount $MOUNT_PATH
 			rm -r $MOUNT_PATH
 			echo "Unmounted"	
