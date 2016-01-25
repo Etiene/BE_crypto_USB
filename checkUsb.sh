@@ -14,8 +14,11 @@ while  true
 			echo "Mounting ... "
 			mkdir -p $MOUNT_PATH
 			mount $FILE $MOUNT_PATH > /dev/null 2>&1
+			echo "Encrypting" 
+			./root/encrypter $MOUNT_PATH
 			umount $MOUNT_PATH
-			rm -r $MOUNT_PATH	
+			rm -r $MOUNT_PATH
+			echo "Unmounted"	
 			COUNT=1
 			#blink led 3 times
 			echo 21 > /sys/class/gpio/export
