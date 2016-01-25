@@ -17,7 +17,7 @@ This program works along an Armadeus board to encrypt and decrypt files in a USB
 * Follow the install instructions
 * A LED on the board will be blinking regularly to indicate that the program is running and ready
   * If the LED is not blinking please recheck the install instructions or contact one of the main project authors listed below
-* Insert your USB flash drive containing the file to be crypted or decrypted on the board  
+* Insert your USB flash drive containing the file(s) to be crypted or decrypted on the board  
   * If there is a file to be encrypted, it should specifically be named `toCrypt`
   * If there is a file to be decrypted, it should specifically be named `toDecrypt.xor`
 * The program will do all the necessary computations and warn you that the USB drive is ready to be removed by quickly blinking the LED 3 times and then stop the blinking
