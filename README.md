@@ -3,7 +3,7 @@
 BE pour la discipline d'éxecution et concurrence à ENSTA Bretagne.
 
 ##Description
-Script to verify USB drive connecting to Armadeus board, mounting and warning the user after unmounting if they can remove the thumb drive through blinking leds
+This program works along an Armadeus board to encrypt a file in a USB drive.
 
 ##Install instructions
 
@@ -12,6 +12,19 @@ Script to verify USB drive connecting to Armadeus board, mounting and warning th
 * Run `sh copyToBoard.sh` to copy all the necessary files to the board
 * Run `sync` on minicom to sync files on the board so they are still there after the reboot
 * Reboot the board
+
+##Usage
+* Follow the install instructions
+* A LED on the board will be blinking regularly to indicate that the program is running and ready
+  * If the LED is not blinking please recheck the install instructions or contact one of the main project authors listed below
+* Insert your USB flash drive containing the file to be crypted on the board  
+  * The file should specifically be named `toCrypt`
+* The program will do all the necessary computations and warn you that the USB drive is ready to be removed by quickly blinking the LED 3 times and then stop the blinking
+* Now you can safely remove the USB drive
+  * The USB drive will now contain an additional file called `crypted.xor`, which is the crypted version of the `toCrypt`file
+* The LED on the board will restart blinking regularly to indicate that the program is ready again
+  * You can repeat the process with more USB flash drives, if desired
+
 
 ##Authors
 * [David Duverger](https://github.com/DavidDUVERGER)
